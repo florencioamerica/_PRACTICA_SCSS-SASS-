@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;    
+}
+
+/* declaración de fuentes */
+@font-face {
+    font-family: "poppins regular";
+    src: url('../font/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: "poppins bold";
+    src: url('../font/Poppins-Bold.ttf');
+}
+
+/* declaración de variables */
+$color00: white;
+$color01: rgb(61, 61, 61);
+$color01bis: rgb(193, 189, 189);
+$color02: rgb(86, 231, 146);
+$color03: rgb(92, 160, 249);
+
+$fuente01: 'poppins regular';
+$fuente02: 'poppins bold';
+
+$tablet: 800px;
+$desktop: 1350px;
+
