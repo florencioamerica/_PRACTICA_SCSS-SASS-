@@ -34,12 +34,7 @@ section{
     justify-content: center;
     align-items: center;
     cursor: pointer;    
-    transition: 0.5s;
-    @media only screen and (min-width:config.$desktop){
-        &{
-            display: none;
-        }
-    }
+    transition: 0.5s;    
     span {
         width: 100%;
         height: 4px;
@@ -77,9 +72,9 @@ section{
     -moz-transform: rotate(45deg) translate(0px, -2px);
     -o-transform: rotate(45deg) translate(0px, -2px);
 }
-#toggle:checked ~ nav >:nth-child(2){
-    transform: translateX(0);
-    opacity: 1;    
+#toggle:checked ~ nav .megamenu{
+    height: auto;
+    opacity: 1;
 }
 
 
@@ -94,12 +89,13 @@ a, a:visited{
 h1, h2, h3, h4{
     font-family: config.$fuente02;
 }
-p, a{
+p, a, span{
     font-family: config.$fuente01;
 }
 h1{
     font-size: 3rem;
     letter-spacing: 3px;
+    text-align: center;
     @media only screen and (min-width:config.$tablet){
         &{
             font-size: 4rem;
@@ -148,17 +144,113 @@ nav{
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        background-color: aqua;
     }
-    >:nth-child(2){
+    a, p, span{
+        color: config.$color00;
+    }
+    .megamenu{
         width: 100%;
-        height: 90vh;
-        background-color: aquamarine;
-        transform: translateX(100vw);
+        height: 0;
         opacity: 0;
+        overflow: hidden;
+        padding: 4rem 1.5rem;
         transition: 1s;
+        background-color: config.$color01;
+        position: absolute;
+        top: 130px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 2rem;
+        @media only screen and (min-width:config.$tablet){
+            &{
+                width: 90%;
+            }
+        }
+        >div{
+            width: 100%;
+            height: 250px;
+            border-right: 2px solid config.$color00;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            row-gap: 2rem;
+            @media only screen and (min-width:config.$tablet){
+                width: 45%    
+            }
+            @media only screen and (min-width:config.$desktop){
+                width: 30%    
+            }
+            >p{
+                font-size: 1.3rem;
+                font-family: config.$fuente02;
+                letter-spacing: 2px;
+            }
+            >ul{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                row-gap: 1rem;
+                a{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: center;
+                    column-gap: 1.5rem;
+                    img{
+
+                    }
+                }
+            }
+            form{                
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                row-gap: 1rem;
+                input{
+                    width: 100%;
+                    border: none;
+                }
+                input[type=text], input[type=email]{
+                    padding: 0.3rem 0.5rem;
+                    font-size: 1rem;
+                    border-radius: 4px;
+                }       
+            }
+            .boton{
+                padding: 0.3rem 1rem;
+                font-size: 1rem;
+            }
+            span{
+                font-size: 1rem;
+
+
+            }
+            .rrss{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                column-gap: 1rem;
+            }
+            
+        }
+        >:nth-child(3){
+            border-right: none;
+            height: auto;
+        }
+        
+        
     }
+    
 }
+
 header{
     height: 100vh;
     background-image: url('https://dummyimage.com/500x800');
@@ -179,11 +271,9 @@ header{
             background-image: url('https://dummyimage.com/1800x900');
         }
     }
-    h1{
-        text-align: center;
-    }
 }
 
+/* ARTÍCULO TIPO 1 */
 .art01{
     width: 100%;
     display: flex;
@@ -233,6 +323,195 @@ header{
         }
     }
 }
+
+/* ARTÍCULO TIPO 2 */
+.art02{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    row-gap:1rem;
+    @media only screen and (min-width:config.$desktop) {
+        &{
+            width: 80%;
+        }
+    }
+    h3, >p{
+        padding: 0 config.$padTexto;
+        @media only screen and (min-width:config.$tablet) {
+            &{
+                width: config.$anchoTexto;
+            }
+        }
+    }
+    .matrix3{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1rem;
+        @media only screen and (min-width:config.$desktop){
+            &{
+                justify-content: space-between;
+            }
+        }
+        >div{
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            @media only screen and (min-width:config.$tablet){
+                &{
+                    width: 45%;
+                    max-width: 800px;
+                }
+            }
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    width: 32%;
+                }
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: .5s;
+                &:hover{
+                    transform: scale(1.3);
+                }
+            }
+        }
+    }
+}
+
+/* ARTÍCULO TIPO 3 */
+.art03{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 2rem;
+    @media only screen and (min-width:config.$tablet){
+        &{
+            row-gap: 3rem;
+        }
+    }
+    h3, >p{
+        width: 100%;
+        text-align: center;
+        padding: 0 1.5rem;
+        @media only screen and (min-width:config.$tablet){
+            width: 80%;
+            padding: 0;
+        }        
+    }
+    >:nth-child(3){
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        div, p{
+            width: 100%;
+            height: 100vw;            
+            @media only screen and (min-width:config.$tablet){
+                &{
+                    width: 50%;
+                    height: 50vw;
+                }
+            }
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    width: 20%;
+                    height: 25vw;
+                    max-height: 500px;
+                }
+            }
+        }
+        :nth-child(odd){
+            background-image: url('https://dummyimage.com/500x500');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            @media only screen and (min-width:config.$tablet){
+                &{
+                    background-image: url('https://dummyimage.com/1200x600');
+                }
+            }
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    background-image: url('https://dummyimage.com/1800x600');
+                }
+            }
+        }
+        :nth-child(even){
+            background-color: config.$color01;
+            padding: 2rem;            
+            color: config.$color00;
+            font-size: 2rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        :nth-child(3){
+            @media only screen and (min-width:config.$tablet){
+                &{
+                    order: 3;
+                }
+            }
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    order: initial;
+                }
+            }
+        }
+        :nth-child(4){
+            @media only screen and (min-width:config.$tablet){
+                &{
+                    order: 2;
+                }
+            }
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    order: initial;
+                }
+            }
+        }
+        :nth-child(5){
+            @media only screen and (min-width:config.$tablet){
+                &{
+                    display: none;
+                }
+            }
+            @media only screen and (min-width:config.$desktop){
+                &{
+                    display: initial;
+                }
+            }
+        }             
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
