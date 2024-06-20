@@ -73,8 +73,22 @@ section{
     -o-transform: rotate(45deg) translate(0px, -2px);
 }
 #toggle:checked ~ nav .megamenu{
-    height: auto;
+    height: 90vh;
     opacity: 1;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    @media only screen and (min-width:config.$tablet){
+        &{
+            height: 85vh;
+        }
+    }  
+    @media only screen and (min-width:config.$desktop){
+        &{
+            height: auto;
+        }
+    }
 }
 
 
@@ -129,6 +143,7 @@ h1{
 
 /* estilos de cada zona */
 nav{
+    height: 10vh;
     padding: 0.5rem 2rem;
     background-color: config.$color01;
     position: fixed;
@@ -138,12 +153,27 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media only screen and (min-width:config.$tablet){
+        &{
+            height: 15vh;
+        }
+    }
+    @media only screen and (min-width:config.$desktop){
+        &{
+            height: 8vh;
+        }
+    }
     >:nth-child(1){
         width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        img{
+            height: 100%;
+            max-height: 70px;
+        }
     }
     a, p, span{
         color: config.$color00;
@@ -157,7 +187,7 @@ nav{
         transition: 1s;
         background-color: config.$color01;
         position: absolute;
-        top: 130px;
+        top: 10vh;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -166,13 +196,17 @@ nav{
         gap: 2rem;
         @media only screen and (min-width:config.$tablet){
             &{
+                top: 15vh;
+            }
+        }     
+        @media only screen and (min-width:config.$desktop){
+            &{
+                top: 130px;
                 width: 90%;
             }
         }
         >div{
             width: 100%;
-            height: 250px;
-            border-right: 2px solid config.$color00;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -182,7 +216,9 @@ nav{
                 width: 45%    
             }
             @media only screen and (min-width:config.$desktop){
-                width: 30%    
+                width: 30%;
+                height: 250px;
+                border-right: 2px solid config.$color00; 
             }
             >p{
                 font-size: 1.3rem;
@@ -190,6 +226,7 @@ nav{
                 letter-spacing: 2px;
             }
             >ul{
+                width: 80%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -201,9 +238,15 @@ nav{
                     justify-content: flex-start;
                     align-items: center;
                     column-gap: 1.5rem;
-                    img{
-
-                    }
+                    transition: 0.5s;   
+                    &:hover{
+                        filter: invert(58%) sepia(26%) saturate(1036%) hue-rotate(176deg) brightness(98%) contrast(98%);
+                    } 
+                }
+                img{
+                    width: 20px;
+                    filter: invert(1);
+                    
                 }
             }
             form{                
@@ -228,8 +271,6 @@ nav{
             }
             span{
                 font-size: 1rem;
-
-
             }
             .rrss{
                 width: 100%;
@@ -238,15 +279,17 @@ nav{
                 justify-content: center;
                 align-items: center;
                 column-gap: 1rem;
-            }
-            
+                img{
+                    transition: 0.2s;
+                    filter: invert(1);                    
+                                       
+                }
+            }            
         }
         >:nth-child(3){
             border-right: none;
-            height: auto;
-        }
-        
-        
+            height: auto;            
+        }               
     }
     
 }
