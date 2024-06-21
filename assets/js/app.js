@@ -1,5 +1,6 @@
 /* import "./_toggle.js"; */
 /* import "./_scroll.js"; */
+import "./_slider.js"
 
 
 const midocumentoHTML = document;

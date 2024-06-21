@@ -1,5 +1,7 @@
 @use 'config';
 
+
+
 /* estilos globales */
 body{
     width: 100%;
@@ -326,24 +328,46 @@ nav{
 }
 
 header{
+    position: relative;
     height: 100vh;
-    background-image: url('https://dummyimage.com/500x800');
-    background-position: center center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    row-gap: 2rem;
-    @media only screen and (min-width:config.$tablet){
-        &{
-            background-image: url('https://dummyimage.com/1200x700');
+    >:nth-child(1){
+        position: absolute;
+        top: 50%;
+        transform:translateY(-50%);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        row-gap: 3rem;
+        h1{
+            color: config.$color00;
+            text-shadow: 0px 0px 5px config.$color01;
         }
     }
-    @media only screen and (min-width:config.$desktop){
-        &{
-            background-image: url('https://dummyimage.com/1800x900');
+    >:nth-child(2){
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .botonSlider{
+        width: 80px;
+        filter: invert(1);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: 0.1s;
+        cursor: pointer;
+        &:active{
+            transform: translateY(-50%) scale(0.9);
         }
+    }    
+    #botonDer{  
+        right:3rem;        
+    }
+    #botonIzd{
+        left: 3rem;
     }
 }
 

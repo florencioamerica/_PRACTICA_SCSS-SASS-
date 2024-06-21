@@ -345,25 +345,47 @@ nav .megamenu > :nth-child(3) form input[type=text], nav .megamenu > :nth-child(
 }
 
 header {
+  position: relative;
   height: 100vh;
-  background-image: url("https://dummyimage.com/500x800");
-  background-position: center center;
-  background-size: cover;
+}
+header > :nth-child(1) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  row-gap: 2rem;
+  justify-content: flex-start;
+  row-gap: 3rem;
 }
-@media only screen and (min-width: 800px) {
-  header {
-    background-image: url("https://dummyimage.com/1200x700");
-  }
+header > :nth-child(1) h1 {
+  color: white;
+  text-shadow: 0px 0px 5px rgb(61, 61, 61);
 }
-@media only screen and (min-width: 1350px) {
-  header {
-    background-image: url("https://dummyimage.com/1800x900");
-  }
+header > :nth-child(2) {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+header .botonSlider {
+  width: 80px;
+  filter: invert(1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.1s;
+  cursor: pointer;
+}
+header .botonSlider:active {
+  transform: translateY(-50%) scale(0.9);
+}
+header #botonDer {
+  right: 3rem;
+}
+header #botonIzd {
+  left: 3rem;
 }
 
 /* ARTÍCULO TIPO 1 */
