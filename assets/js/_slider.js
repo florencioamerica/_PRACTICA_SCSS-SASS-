@@ -25,7 +25,7 @@ botonDer.addEventListener('click', function(){
         img.setAttribute('posicion', posicionSiguiente)
     }
 
-    crearAutomatismo(5000)
+    crearAutomatismo(7000)
 })
 
 //02 ESCUCHAR LOS CLICKS DEL BOTÓN IZD (QUE ESTÁ EN CONSTANTE)
@@ -47,16 +47,13 @@ botonIzd.addEventListener('click', function(){
         img.setAttribute('posicion', posicionSiguiente)
     }
 
-    crearAutomatismo(5000)
+    crearAutomatismo(3000)
 })
 
 
 /* CREAMOS EL AUTOMATISMO PARA QUE SE EJECUTEN DE FORMA AUTOMÁTICA CADA 5 SEGUNDOS */
 let intervalo
-let tiempo = 3000
-crearAutomatismo(tiempo)
-console.log("línea 58")
-
+crearAutomatismo(3000)
 
 function crearAutomatismo(t){
     
@@ -67,9 +64,8 @@ function crearAutomatismo(t){
     intervalo = window.setInterval(function(){
         let numAleatorio;
         numAleatorio = Number(numAleatorio); /* Pasamos a tipo número */
-        numAleatorio = Math.random()*5; /* obtenemos un número entre 1 y 5 (incluyendo decimales) */
-        numAleatorio = Math.ceil(numAleatorio) /* redondeamos a número entero el resultado */
-        
+        numAleatorio = Math.random()*5; /* obtenemos un número decimal entre 0,1 y 4,9(incluyendo decimales) */        
+        numAleatorio = Math.ceil(numAleatorio) /* redondeamos AL ALZA a número entero el resultado */
         img.src=`./assets/img/img${numAleatorio}.jpg`
         img.setAttribute('posicion', numAleatorio)
     }, t)
