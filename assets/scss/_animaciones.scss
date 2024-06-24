@@ -1,0 +1,89 @@
+/* ESTILOS DEL JAVASCRIPT DE ANIMACIONES AL HACER SCROLL */
+.aparecer{
+    animation: aparecer;
+    animation-duration: 2s;
+    animation-iteration-count:1;
+}
+.desaparecer{    
+    animation: desaparecer;
+    animation-duration: 1s;
+    animation-iteration-count:1;
+}
+.aparecerDer{
+    animation: aparecerDer;
+    animation-duration: 1s;
+    animation-iteration-count:1;
+}
+.desaparecerHaciaDer{    
+    animation: desaparecerDer;
+    animation-duration: 2s;
+    animation-iteration-count:1;
+}
+.aparecerIzd{
+    animation: aparecerIzd;
+    animation-duration: 1s;
+    animation-iteration-count:1;
+}
+.desaparecerHaciaIzd{    
+    animation: desaparecerIzd;
+    animation-duration: 2s;
+    animation-iteration-count:1;
+}
+
+@keyframes aparecer {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes desaparecer {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes aparecerDer {
+    0%{
+        opacity: 0;
+        transform: translateX(10vw);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes desaparecerDer {
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(10vw);
+    }
+}
+@keyframes aparecerIzd {
+    0%{
+        opacity: 0;
+        transform: translateX(-10vw);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes desaparecerIzd{
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-10vw);
+    }
+}
+/******** FIN DE ESTILOS ANIMACIONES JAVASCRIPT *********/

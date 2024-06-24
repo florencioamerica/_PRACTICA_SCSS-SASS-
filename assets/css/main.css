@@ -16,6 +16,7 @@
   src: url("../font/Poppins-Bold.ttf");
 }
 /* declaración de variables */
+/* @use 'animaciones'; */
 /* estilos globales */
 body {
   width: 100%;

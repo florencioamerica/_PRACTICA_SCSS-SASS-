@@ -51,9 +51,6 @@ botonIzd.addEventListener('click', function(){
 })
 
 
-
-
-
 /* CREAMOS EL AUTOMATISMO PARA QUE SE EJECUTEN DE FORMA AUTOMÁTICA CADA 5 SEGUNDOS */
 let intervalo
 let tiempo = 3000
