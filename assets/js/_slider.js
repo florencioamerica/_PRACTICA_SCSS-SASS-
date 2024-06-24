@@ -3,7 +3,6 @@ const img = document.getElementById('img');
 const botonDer = document.getElementById('botonDer');
 const botonIzd = document.getElementById('botonIzd');
 
-
 //02 ESCUCHAR LOS CLICKS DEL BOTÓN DER (QUE ESTÁ EN CONSTANTE)
 botonDer.addEventListener('click', function(){
     //CUANDO HAYA UN CLICK EN EL BOTÓN DER CAMBIO EL SRC DE LA CONSTANTE DE LA IMAGEN PRINCIPAL HACIA UNA MÁS  
@@ -26,13 +25,13 @@ botonDer.addEventListener('click', function(){
         img.setAttribute('posicion', posicionSiguiente)
     }
 
-    crearAutomatismo(7000)
+    crearAutomatismo(5000)
 })
-
 
 //02 ESCUCHAR LOS CLICKS DEL BOTÓN IZD (QUE ESTÁ EN CONSTANTE)
 botonIzd.addEventListener('click', function(){
 
+    let posicionActual //declaro variable local  
     posicionActual = img.getAttribute('posicion')
     posicionActual = Number(posicionActual)
 
@@ -48,19 +47,26 @@ botonIzd.addEventListener('click', function(){
         img.setAttribute('posicion', posicionSiguiente)
     }
 
-    crearAutomatismo(7000)
+    crearAutomatismo(5000)
 })
+
+
+
 
 
 /* CREAMOS EL AUTOMATISMO PARA QUE SE EJECUTEN DE FORMA AUTOMÁTICA CADA 5 SEGUNDOS */
 let intervalo
-let tiempo = 5000
+let tiempo = 3000
 crearAutomatismo(tiempo)
+console.log("línea 58")
+
 
 function crearAutomatismo(t){
+    
     if(intervalo != undefined){
         clearInterval(intervalo)
     }
+
     intervalo = window.setInterval(function(){
         let numAleatorio;
         numAleatorio = Number(numAleatorio); /* Pasamos a tipo número */
@@ -71,3 +77,6 @@ function crearAutomatismo(t){
         img.setAttribute('posicion', numAleatorio)
     }, t)
 }
+
+
+
