@@ -10,13 +10,12 @@ objetivos:
 Requerimientos:
 
 Requiere que en el HTML haya elementos con CLASE: izquierda, derecha o centro para que ejecute las animaciones.
-
 Este javascript requiere de unas clases y animaciones que deben estar en el CSS vinculado al documento HTML en cuestión.
-
 Este javascript también efectua una animación sobre el NAV el cual debe tener un id: navegador para que funcione
-
 Desarrollado por la magnifica clase del curso de desarrollo web
 */
+
+
 
 
 
@@ -31,10 +30,17 @@ const subNav01 = document.getElementById("subNav01")
 const toggleLabel = document.getElementById("toggleLabel")
 
 
+
+
 //listener de scroll para modificar el nav y ejecutar animaciones
-window.onscroll=function(){    
-    cambiarNav()
-    /* Entro si el tamaño útil del navegador es mayor o igual a 800px */   
+window.onscroll=function(){
+
+    if(navegador != null && toggleLabel != null){
+        cambiarNav()
+    }
+        
+
+    //Entro si el tamaño útil del navegador es mayor o igual a 800px   
     if(window.innerWidth>="800"){
         for(const item of izquierdas){
             animaciones(item, "izd")
@@ -49,7 +55,7 @@ window.onscroll=function(){
 }
 
 //función a la que sólo entraremos cuando esta sea llamada desde el evento
-function cambiarNav(){    
+function cambiarNav(){
     
     //si el top del scroll del body es superior a 80 de posición, 
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {

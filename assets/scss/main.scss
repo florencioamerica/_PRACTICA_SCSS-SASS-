@@ -1,5 +1,5 @@
 @use 'config';
-/* @use 'animaciones'; */
+@use 'animaciones';
 
 
 
@@ -342,8 +342,12 @@ header{
         justify-content: flex-start;
         row-gap: 3rem;
         h1{
+            padding: 2rem;
             color: config.$color00;
-            text-shadow: 0px 0px 5px config.$color01;
+            /* text-shadow: 0px 0px 5px config.$color01; */
+            @media only screen and (min-width:config.$tablet){
+                padding: 6rem;
+            }
         }
     }
     >:nth-child(2){
