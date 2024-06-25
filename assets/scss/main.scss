@@ -331,6 +331,7 @@ nav{
 header{
     position: relative;
     height: 100vh;
+    background-color: config.$color01;
     >:nth-child(1){
         position: absolute;
         top: 50%;
