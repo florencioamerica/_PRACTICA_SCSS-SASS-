@@ -77,7 +77,6 @@ botonIzd.addEventListener('click', function(){
     img.setAttribute('posicion', posicionSiguiente)
     img.animate(tranformacion, duracion)
     h1.animate(tranformacion2, duracion2)
-
        
     cambiarh1(posicionSiguiente)
     
